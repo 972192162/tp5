@@ -1,0 +1,71 @@
+{extend name="./layout/head"}
+{block name="content"}
+
+            <!-- Pcontenttent -->
+            <div class="page-content">
+    <!-- Page Breadcrumb -->
+    <div class="page-breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <a href="/admin/tag/index">用户管理</a>
+            </li>
+            <li class="active">用户列表</li>
+        </ul>
+    </div>
+    <!-- /Page Breadcrumb -->
+
+    <!-- Page Body -->
+    <div class="page-body">
+
+        <button type="button" tooltip="用户管理" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/users/add'"> <i class="fa fa-plus"></i> Add
+        </button>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <div class="flip-scroll">
+                            <table class="table table-bordered table-hover">
+                                <thead class="">
+
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">用户名称</th>
+                                    <th class="text-center">操作</th>
+                                </tr>
+
+                                </thead>
+                                <tbody>
+                                {foreach $user as $v}
+                                <tr>
+                                    <td align="center">{$v.id}</td>
+                                    <td align="center">{$v.username}</td>
+                                    <td align="center">
+                                        <a href="/admin/users/edit?id={$v.id}" class="btn btn-primary btn-sm shiny">
+                                            <i class="fa fa-edit"></i> 编辑
+                                        </a>
+                                        <a href="#" onClick="warning('确实要删除吗', '/admin/users/delete?id={$v.id}')" class="btn btn-danger btn-sm shiny">
+                                            <i class="fa fa-trash-o"></i> 删除
+                                        </a>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+
+                            </table>
+                            {$user->render()}
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Page Body -->
+</div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Pcontenttent -->
+
+{/block}

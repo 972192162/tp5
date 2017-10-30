@@ -1,0 +1,21 @@
+{extend name="./layout/layout"}
+{block name="content"}
+	<div class="left">
+		{foreach $content as $v}
+		<div class="xnews2">
+				<div class="pic"><a target="_blank" href=""><img src="__PUBLIC__/thumb/{$v.pic}" alt=""/></a>
+				</div>
+				<div class="dec">
+				<h3><a target="_blank" href="/index/content/content?id={$v.id}">{$v.title}</a></h3>
+				<div class="time">发布时间：{$v.time|date=('Y-m-d H:i:s'),###}</div>
+				<p>{$v.desc}</p>
+				<div class="time"><a href='z97712.html'>{$v.tag_name}</a>  </div>
+				</div>
+		</div>
+		{/foreach}
+		{$content->render()}
+	</div>
+
+{/block}
+	
+

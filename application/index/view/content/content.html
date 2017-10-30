@@ -1,0 +1,40 @@
+{extend name="./layout/layout"}
+{block name="content"}
+            <div class="left">
+                <div class="scrap">
+                    <h1>{$info.title}</h1>
+                    <div class="spread">
+                        <span class="writor">发布时间：{$info.time|date=("Y-m-d H:i:s"),###}</span>
+                        <span class="writor">{$info.author}</span>
+                        <span class="writor">标签：<a href='/jiehun/z97712.html'>{$info.tag_name}</a></span>
+                        <span class="writor">热度：<script src="/jiehun/plus/count.php?view=yes&aid=156214&mid=55" type='text/javascript' language="javascript"></script></span>
+                    </div>
+                </div>
+
+                <!--百度分享-->
+                <script src='/jiehun/goto/my-65542.js' language='javascript'></script>
+
+                <div class="takeaway">
+                    <span class="btn arr-left"></span>
+                    <p class="jjxq">{$info.desc}
+</p>
+                    <span class="btn arr-right"></span>
+                </div>
+
+                  <script src='/jiehun/goto/my-65541.js' language='javascript'></script>
+
+                <div class="substance"><p><strong>{$info.desc}</strong></p>
+
+                    {$info.content}
+                <div class="biaoqian">
+
+
+                </div>
+                </div>
+            </div>
+
+
+
+
+{/block}
+
